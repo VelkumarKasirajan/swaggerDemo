@@ -1,0 +1,5 @@
+cxf:
+  path: /demo # CXFServlet URL pattern
+  jaxrs:
+    component-scan: true
+

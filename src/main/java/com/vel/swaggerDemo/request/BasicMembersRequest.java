@@ -1,4 +1,9 @@
-package com.vel.swaggerDemo.entity;
+package com.vel.swaggerDemo.request;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.vel.swaggerDemo.utill.BodyType;
 import com.vel.swaggerDemo.utill.Complexion;
@@ -6,30 +11,44 @@ import com.vel.swaggerDemo.utill.MarriedStatus;
 import com.vel.swaggerDemo.utill.PhysicalStatus;
 import com.vel.swaggerDemo.utill.SexStatus;
 
-public class Members {
-	
+@XmlRootElement(name = "BasicMembersRequest")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class BasicMembersRequest {
+
+	@XmlElement(name = "id", required = true)
 	private int id;
 	
+	@XmlElement(name = "name", required = true)
 	private String name;
 	
+	@XmlElement(name = "age", required = true)
 	private int age;
 	
+	@XmlElement(name = "marriedStatus", required = true)
 	private MarriedStatus marriedStatus = MarriedStatus.SINGLE;
 	
+	@XmlElement(name = "sexStatus", required = true)
 	private SexStatus sexStatus = SexStatus.MALE;
 	
+	@XmlElement(name = "bodyType", required = true)
 	private BodyType bodyType = BodyType.AVERAGE;
 	
+	@XmlElement(name = "complexion", required = true)
 	private Complexion complexion = Complexion.FAIR;
 	
+	@XmlElement(name = "height", required = true)
 	private int height;
 	
+	@XmlElement(name = "weight", required = true)
 	private int weight;
 	
+	@XmlElement(name = "mothertongue", required = true)
 	private String mothertongue;
 	
+	@XmlElement(name = "physicalStatus", required = true)
 	private PhysicalStatus physicalStatus = PhysicalStatus.NORMAL;
 
+	@XmlElement(name = "languagesKnown", required = true)
 	private String languagesKnown;
 
 	public int getId() {
@@ -130,10 +149,10 @@ public class Members {
 
 	@Override
 	public String toString() {
-		return "Members [id=" + id + ", name=" + name + ", age=" + age + ", marriedStatus=" + marriedStatus
+		return "BasicMembersRequest [id=" + id + ", name=" + name + ", age=" + age + ", marriedStatus=" + marriedStatus
 				+ ", sexStatus=" + sexStatus + ", bodyType=" + bodyType + ", complexion=" + complexion + ", height="
 				+ height + ", weight=" + weight + ", mothertongue=" + mothertongue + ", physicalStatus="
 				+ physicalStatus + ", languagesKnown=" + languagesKnown + "]";
 	}
-
+	
 }

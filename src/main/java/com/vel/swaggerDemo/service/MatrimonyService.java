@@ -6,7 +6,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.vel.swaggerDemo.request.BasicMembersRequest;
 import com.vel.swaggerDemo.request.RegisterUserRequest;
+import com.vel.swaggerDemo.response.BasicMembersResponse;
 import com.vel.swaggerDemo.response.RegisterUserResponse;
 
 import io.swagger.annotations.Api;
@@ -28,4 +30,14 @@ public interface MatrimonyService {
 			@ApiResponse(code = 404, message = "Not Found")
 	})
 	RegisterUserResponse createUser(RegisterUserRequest registerUserRequest);
+	
+	@POST
+	@Path("/updateBasicDetails")
+	@ApiOperation(value = "Update Basic Details")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Success", response = BasicMembersResponse.class),
+			@ApiResponse(code = 404, message = "Not Found")
+	})
+	BasicMembersResponse updateBasicDetails(BasicMembersRequest basicMembersRequest);
+	
 }
